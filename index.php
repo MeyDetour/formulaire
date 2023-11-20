@@ -10,35 +10,11 @@
     <title>Document</title>
 </head>
 <body>
-
 <?php
-$prenomBon =  "mey";
-$prenominput = "";
-$mdpinput = "";
-$prenominput = $_POST['prenominput'];
-$mdpinput = $_POST['mdpinput'];
-
-$mdpBon = "meymey";
-$secret = "Decouvre mon secret";
-$messageErreur = "";
-
-if ($prenominput != $prenomBon ){
-    $messageErreur = "MAUVAIS PSEUDO BAHAHA";
-}
-elseif ($mdpinput != $mdpBon ){
-    $messageErreur = "MAUVAIS MDP BAHAHA";
-}
-elseif ($prenominput == $prenomBon && $mdpinput== $mdpBon){
-
-    $secret = "<h1>$prenomBon :</h1> Here's my secret  , I love plushes :) !";
-}
-else{
-    $messageErreur = "MAUVAIS LOGIN BAHAHA";
-}
+require_once 'secret.php'
 ?>
-
 <div class="container d-flex flex-column p-5">
-    <p>Hello ! I'm Mey and i dare you to find my secret ! </p>
+    <p>Hello ! I dare you to find my secret ! </p>
 <form action="" method="post" class="d-flex flex-column w-20 fs-2 ">
 
 
@@ -48,7 +24,7 @@ else{
 
 </form>
 
-<span class="text-primary"><?=$secret?></span>
+<span class="text-primary"><?=$secretAfficher?></span>
 <span class="text-danger fs-4"><?=$messageErreur?></span>
 </div>
 </body>
